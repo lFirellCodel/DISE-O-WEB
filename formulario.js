@@ -5,29 +5,30 @@ var $form = $('#formulario'),
 	$primerPost = $('.item').first();
 
 
-function mostrarOcultarFormulario(tito){
-	tito.preventDefault();
-
-	$form.slideToggle();
-	$lista.slideToggle();
-	
-
-}
 
 if (localStorage.getItem('autosave')) {
 
 	$titulo.val(sessionStorage.getItem('titulo'));
 	$url.val(sessionStorage.getItem('url'));
-};
-
+}
+// js  cada 1 seg ejecuta esta funcion
 var id = setInterval(function(){
 	sessionStorage.setItem('titulo',$titulo.val());
 	sessionStorage.setItem('url',$url.val());
-},5000);
+},1000);
 
-function agregarPost(e){
-	e.preventDefault();
 
+function mostrarOcultarFormulario(){
+	
+
+	$form.slideToggle();
+	$lista.slideToggle();
+	var pablo ="";
+	return false;
+
+}
+
+function agregarPost(){
 	var url = $url.val(),
 		titulo = $titulo.val(),
 		clone = $primerPost.clone();
